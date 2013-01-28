@@ -9,6 +9,7 @@
 #import "Facebook+Extra.h"
 
 static FacebookFailedBlock _facebookDialogFaildBlock;
+
 static FacebookSuccessBlock _facebookDialogSuccessBlock;
 
 @interface Facebook (extra)<FBDialogDelegate>
@@ -203,24 +204,24 @@ static FacebookSuccessBlock _facebookDialogSuccessBlock;
     }
 }
 #pragma mark - Share Methods
-+(void)shareToUserFeedWithMessage:(NSString*)message
++(void)openDialogWithMessage:(NSString*)message
                                andURL:(NSURL*)linkURL
                              andImage:(UIImage*)image
                       andSuccessBlock:(FacebookSuccessBlock)successBlock
                        andFailedBlock:(FacebookFailedBlock)failedBlock
 {
-    [Facebook shareToUserFeedWithParameteres:nil andMessage:message andURL:linkURL andImage:image andSuccessBlock:successBlock andFailedBlock:failedBlock];
+    [Facebook openDialogWithParameteres:nil andMessage:message andURL:linkURL andImage:image andSuccessBlock:successBlock andFailedBlock:failedBlock];
 }
-+(void)shareToUserFeedWithParameteres:(NSMutableDictionary*)params
++(void)openDialogWithParameteres:(NSMutableDictionary*)params
                           andMessage:(NSString*)message
                               andURL:(NSURL*)linkURL
                             andImage:(UIImage*)image
                      andSuccessBlock:(FacebookSuccessBlock)successBlock
                       andFailedBlock:(FacebookFailedBlock)failedBlock
 {
-    [Facebook shareToUserFeedWithDialogPath:@"me/feed" useNativeDialog:YES Parameteres:params andMessage:message andURL:linkURL andImage:image andSuccessBlock:successBlock andFailedBlock:failedBlock];
+    [Facebook openDialogWithDialogPath:@"me/feed" useNativeDialog:YES Parameteres:params andMessage:message andURL:linkURL andImage:image andSuccessBlock:successBlock andFailedBlock:failedBlock];
 }
-+(void)shareToUserFeedWithDialogPath:(NSString*)dialogPath
++(void)openDialogWithDialogPath:(NSString*)dialogPath
                      useNativeDialog:(BOOL)useNativeDialog
                          Parameteres:(NSMutableDictionary*)params
                            andMessage:(NSString*)message

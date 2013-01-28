@@ -96,7 +96,7 @@ typedef void (^FacebookFailedBlock)(NSError* error);
  link will be added automatically to the sending
  params.
  */
-+(void)shareToUserFeedWithMessage:(NSString*)message
++(void)openDialogWithMessage:(NSString*)message
                            andURL:(NSURL*)linkURL
                          andImage:(UIImage*)image
                   andSuccessBlock:(FacebookSuccessBlock)successBlock
@@ -109,7 +109,7 @@ typedef void (^FacebookFailedBlock)(NSError* error);
  the dialog path is me/feed
  and if it can uses Native Dialog(set to YES)
  */
-+(void)shareToUserFeedWithParameteres:(NSMutableDictionary*)params
++(void)openDialogWithParameteres:(NSMutableDictionary*)params
                            andMessage:(NSString*)message
                                andURL:(NSURL*)linkURL
                              andImage:(UIImage*)image
@@ -122,7 +122,7 @@ typedef void (^FacebookFailedBlock)(NSError* error);
  ask if should use the native Dialog
  
  */
-+(void)shareToUserFeedWithDialogPath:(NSString*)dialogPath
++(void)openDialogWithDialogPath:(NSString*)dialogPath
                      useNativeDialog:(BOOL)useNativeDialog
                          Parameteres:(NSMutableDictionary*)params
                           andMessage:(NSString*)message
